@@ -3,27 +3,28 @@ package service
 import (
 	"context"
 	"gin_api/dao"
-	"gin_api/model"
+	"gin_api/pkg/res"
 )
 
 type TestService struct { //入参函数
 	Id int64 `json:"id" form:"id"` //用于form-data接收或者json接收
 }
 
-func (service *TestService) TestInfo(ctx context.Context) *model.UserResp {
-	var res model.UserResp
-	res.Code = 400
-	res.Mess = "数据返回错误"
-
+func (service *TestService) TestInfo(ctx context.Context) res.Response {
 	TestDao := dao.NewTestDao()
 	data, err := TestDao.TestInfo(service.Id)
 	if err != nil {
-		res.Code = 400
-		res.Mess = "查询失败"
-		return &res
+		return res.Response{
+			Status: 400,
+			Msg:    "查询数据失败",
+			Data:   nil,
+		}
 	}
-	res.Code = 200
-	res.Mess = "成功"
-	res.Data = data
-	return &res
+	return res.Response{
+		Status: 200,
+		Msg:    "成功",
+		Data: res.Responses{
+			ItemList: data,
+		},
+	}
 }

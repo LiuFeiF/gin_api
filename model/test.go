@@ -9,8 +9,9 @@ type User struct { //测试表
 	gorm.Model        //此直接调用gorm数据结构体
 	Name       string `json:"name" gorm:"name"`
 }
-type UserResp struct {
-	Code int    `json:"code,omitempty"`
-	Mess string `json:"mess,omitempty"`
-	Data *User  `json:"data,omitempty"`
-}
+
+//type UserResp struct {
+//	Code int    `json:"code,omitempty"`
+//	Mess string `json:"mess,omitempty"`
+//	Data *User  `json:"data,omitempty"`
+//}
