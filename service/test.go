@@ -20,6 +20,7 @@ func (service *TestService) TestInfo(ctx context.Context) res.Response {
 			Data:   nil,
 		}
 	}
+
 	return res.Response{
 		Status: 200,
 		Msg:    "成功",
