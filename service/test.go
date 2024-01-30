@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"fmt"
 	"gin_api/dao"
 	"gin_api/pkg/res"
 )
@@ -20,7 +21,7 @@ func (service *TestService) TestInfo(ctx context.Context) res.Response {
 			Data:   nil,
 		}
 	}
-
+	fmt.Println(data)
 	return res.Response{
 		Status: 200,
 		Msg:    "成功",
