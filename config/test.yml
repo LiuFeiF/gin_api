@@ -8,3 +8,8 @@ mysql:
   username: root
   password: 123456
   charset: utf8mb4
+redis:
+  host: localhost
+  port: 6379
+  password: 
+#  masterName: redis-master
