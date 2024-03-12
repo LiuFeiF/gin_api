@@ -11,7 +11,7 @@ func InitViper() {
 	workDir, _ := os.Getwd() //工作目录
 	env := os.Getenv("GO_ENV")
 	if env == "" {
-		env = "test"
+		env = "config_test"
 	}
 	viper.SetConfigName(fmt.Sprintf("%s", env)) //配置文件文件名
 	viper.SetConfigType("yml")                  //配置文件的类型
