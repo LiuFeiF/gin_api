@@ -28,3 +28,15 @@ log:
 es:
   host: 172.0.0.1
   port: 9200
+
+amqp:
+  name: amqp
+  host: 170.0.0.1
+  port: 5672
+  username: admin
+  password: 123456
+
+balance:
+  url1: http://localhost:8081
+  url2: http://localhost:8082
+  url3: http://localhost:8083
